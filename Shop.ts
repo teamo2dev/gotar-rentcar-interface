@@ -99,6 +99,162 @@ export default interface Shop {
   }[];
   /**
    * @type Object[]
+   * @description 외부에서 제공된 업체 혹은 지점의 특정 구간 동안의 운영 시간
+   * @nullable false
+   * @required true
+   * @default []
+   */
+  seasonalOperationTimes: {
+    /**
+     * @type String
+     * @description 요일
+     * @nullable false
+     * @required true
+     * @example MON | TUE | WED | THU | FRI | SAT | SUN;
+     * @default N/A
+     */
+    day: string;
+    /**
+     * @type String
+     * @description 특정 구간의 시작 일 (YYYY-MM-DD)
+     * @nullable false
+     * @required true
+     * @example 2023-01-01
+     * @default N/A
+     */
+    startDate: string;
+    /**
+     * @type String
+     * @description 특정 구간의 종료 일 (YYYY-MM-DD)
+     * @nullable false
+     * @required true
+     * @example 2023-01-31
+     * @default N/A
+     */
+    endDate: string;
+    /**
+     * @type String
+     * @description 운영 시작 시간
+     * @nullable false
+     * @required true
+     * @example 00:00
+     * @default 00:00
+     */
+    open: string;
+    /**
+     * @type String
+     * @description 운영 종료 시간
+     * @nullable false
+     * @required true
+     * @example 22:00
+     * @default 00:00
+     */
+    close: string;
+    /**
+     * @type Boolean
+     * @description 다음날에 닫는 경우
+     * <br>
+     * - day가 MON일때 true인 경우, 월요일에 열어서 화요일에 닫는 것을 의미.
+     * - day가 MON일때 false인 경우, 월요일에 열어서 월요일에 닫는 것을 의미.
+     * @nullable false
+     * @required true
+     * @example false
+     * @default false
+     */
+    closeNextDay: boolean;
+  }[];
+  /**
+   * @type Object[]
+   * @description 외부에서 제공된 업체 혹은 지점의 브레이크 타임 (하루 안에서 운영시간이 나뉠 경우, 중간 비는 시간을 정의)
+   * @nullable false
+   * @required true
+   * @default []
+   */
+  operationBreakTimes: {
+    /**
+     * @type String
+     * @description 요일
+     * @nullable false
+     * @required true
+     * @example MON | TUE | WED | THU | FRI | SAT | SUN;
+     * @default N/A
+     */
+    day: string;
+    /**
+     * @type String
+     * @description 브레이크 타임 시작 시간
+     * @nullable false
+     * @required true
+     * @example 14:00
+     * @default N/A
+     */
+    start: string;
+    /**
+     * @type String
+     * @description 브레이크 타임 종료 시간
+     * @nullable false
+     * @required true
+     * @example 15:00
+     * @default N/A
+     */
+    end: string;
+  }[];
+  /**
+   * @type Object[]
+   * @description 외부에서 제공된 업체 혹은 지점의 특정 구간 동안의 브레이크 타임 (하루 안에서 운영시간이 나뉘는 것이 경우, 중간 비는 시간을 정의)
+   * @nullable false
+   * @required true
+   * @default []
+   */
+  seasonalOperationBreakTimes: {
+    /**
+     * @type String
+     * @description 요일
+     * @nullable false
+     * @required true
+     * @example MON | TUE | WED | THU | FRI | SAT | SUN;
+     * @default N/A
+     */
+    day: string;
+    /**
+     * @type String
+     * @description 특정 구간의 시작 일 (YYYY-MM-DD)
+     * @nullable false
+     * @required true
+     * @example 2023-01-01
+     * @default N/A
+     */
+    startDate: string;
+    /**
+     * @type String
+     * @description 특정 구간의 종료 일 (YYYY-MM-DD)
+     * @nullable false
+     * @required true
+     * @example 2023-01-31
+     * @default N/A
+     */
+    endDate: string;
+    /**
+     * @type String
+     * @description 브레이크 타임 시작 시간
+     * @nullable false
+     * @required true
+     * @example 14:00
+     * @default N/A
+     */
+    start: string;
+    /**
+     * @type String
+     * @description 브레이크 타임 종료 시간
+     * @nullable false
+     * @required true
+     * @example 15:00
+     * @default N/A
+     */
+    end: string;
+  }[];
+  /**
+   * @type Object[]
    * @description 외부에서 제공된 업체 혹은 지점의 면허 규정
    * @nullable false
    * @required true
