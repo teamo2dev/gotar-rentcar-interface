@@ -671,16 +671,25 @@ export default interface Vehicle {
     cancellationPolicy: {
       /**
        * @type Number
-       * @description 예약 후 무료 취소 가능 시간
+       * @description 대여 N시간 전 무료취소가능
        * @nullable false
        * @required true
        * @example 0
-       * @default N/A
+       * @default 0
        */
       freeCancellationHours: number;
       /**
+       * @type Number
+       * @description 예약 N시간 이내 무료취소가능
+       * @nullable false
+       * @required true
+       * @example 0
+       * @default 0
+       */
+      freeCancellationHoursAfterReservation: number;
+      /**
        * @type Object[]
-       * @description 구간별 취소 수수료 금액 및 기간 정보
+       * @description 구간별 취소 수수료 금액 및 기간 정보 (대여시작 beforeRentalWithinStart시간 전부터 대여시작 beforeRentalWithinEnd시간 전까지로 해석한다)
        * @nullable false
        * @required true
        * @default N/A
@@ -688,7 +697,7 @@ export default interface Vehicle {
       cancellationCharges: {
         /**
          * @type Number
-         * @description 구간 적용 시작 시간
+         * @description 구간 적용 시작 시간(대여시작시간에서 거꾸로 계산, N시간 전)
          * @nullable false
          * @required true
          * @example 0
@@ -697,7 +706,7 @@ export default interface Vehicle {
         beforeRentalWithinEnd: number;
         /**
          * @type Number
-         * @description 구간 적용 종료 시간
+         * @description 구간 적용 종료 시간(대여시작시간에서 거꾸로 계산, N시간 전)
          * @nullable false
          * @required true
          * @example 48
