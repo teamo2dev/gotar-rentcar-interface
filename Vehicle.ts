@@ -756,6 +756,7 @@ export default interface Vehicle {
         /**
          * @type Number
          * @description 수수료 적용 비율(chargeMode: 2 인 경우)
+         * <br> 0 ~ 1 사이의 값이며, 0.1은 10%를 취소수수료로 부과한다는 의미이다.
          * @nullable true
          * @required true
          * @example 0.5
@@ -764,7 +765,8 @@ export default interface Vehicle {
         chargePercentage: number | null;
         /**
          * @type Number
-         * @description 수수료 적용 일자(chargeMode: 1 인 경우)
+         * @description 수수료 적용 일자 수(chargeMode: 1 인 경우)
+         * <br> 대여금액 / 대여일 수 * this 를 계산하여 취소수수료를 부과한다는 의미이다.
          * @nullable true
          * @required true
          * @example 1
