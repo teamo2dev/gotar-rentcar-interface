@@ -936,4 +936,154 @@ export default interface Vehicle {
      */
     description: string;
   }[];
+  /**
+   * @type Object[]
+   * @description 외부에서 제공된 차량의 부가서비스 정보
+   * @nullable false
+   * @required true
+   * @default []
+   */
+  addOns: {
+    /**
+     * @type String
+     * @description Unique Identifier of the AddOn
+     * <br>
+     * - Available: Vehicle의 _id + 부가서비스에 대한 고유 값 혹은 구분 가능한 이름 등
+     * @nullable false
+     * @required true
+     * @example
+     * @default N/A
+     */
+    id: string;
+    /**
+     * @type String
+     * @description 부가서비스의 이름
+     * @nullable false
+     * @required true
+     * @example 유아용 카시트
+     * @default N/A
+     */
+    name: string;
+    /**
+     * @type String
+     * @description 부가서비스의 설명
+     * @nullable false
+     * @required true
+     * @example 유아대상의 카시트입니다.
+     * @default ''
+     */
+    description: string;
+    /**
+     * @type Number
+     * @description 부가서비스 재고
+     * <br>
+     * 만약, API에서 재고를 제공하지 않는다면 Default: -1
+     * @nullable false
+     * @required true
+     * @example 99
+     * @default -1
+     */
+    stockCount: number;
+    /**
+     * @type Number
+     * @description 부가서비스 최대 주문 가능 갯수
+     * <br>
+     * API에서 최대 주문 가능 갯수를 제공하지 않는다면 Default: -1
+     * @nullable false
+     * @required true
+     * @example 3
+     * @default -1
+     */
+    maxAvailableCountPerReservation: number;
+    /**
+     * @type Number
+     * @description 부가서비스 지불 방법
+     * <br>
+     * ∙ 1: 현장 지불<br>
+     * ∙ 2: 사전 지불
+     * @nullable false
+     * @required true
+     * @example 1
+     * @default N/A
+     */
+    paymentMode: number;
+    /**
+     * @type Object
+     * @description 부가서비스 가격 정보
+     * <br>
+     * 부가서비스 가격은 항상 100% 현장지불이거나 100% 사전지불이여야 한다
+     * @nullable false
+     * @required true
+     * @default N/A
+     */
+    price: {
+      /**
+       * @type Object
+       * @description 사전 지불 금액
+       * @nullable false
+       * @required true
+       * @default N/A
+       */
+      prepaidPrice: {
+        /**
+         * @type String
+         * @description 통화(화폐)
+         * @nullable false
+         * @required true
+         * @example 'USD'
+         * @default N/A
+         */
+        currency: string;
+        /**
+         * @type Number
+         * @description 금액
+         * @nullable false
+         * @required true
+         * @example 166.85
+         * @default N/A
+         */
+        amount: number;
+      };
+      /**
+       * @type Object
+       * @description 현장 지불 금액
+       * @nullable false
+       * @required true
+       * @default N/A
+       */
+      payOnArrivalPrice: {
+        /**
+         * @type String
+         * @description 통화(화폐)
+         * @nullable false
+         * @required true
+         * @example 'USD'
+         * @default N/A
+         */
+        currency: string;
+        /**
+         * @type Number
+         * @description 금액
+         * @nullable false
+         * @required true
+         * @example 166.85
+         * @default N/A
+         */
+        amount: number;
+      };
+    };
+    /**
+     * @type String
+     * @description 부가서비스 가격 계산 방법
+     * <br>
+     * - PER_HOUR: 부가서비스 1개마다 예약 시간으로 계산한다. ((reservationHour * count) * price)
+     * - PER_COUNT: 부가서비스 1개마다 계산한다. (count * price)
+     * - PER_DAY: 부가서비스 1개마다 예약 일로 계산한다 (1일 1시간인경우 2일로 계산한다.) ((day * count) * price)
+     * @nullable false
+     * @required true
+     * @example 'PER_HOUR' | 'PER_COUNT' | 'PER_DAY'
+     * @default N/A
+     */
+    chargeType: 'PER_HOUR' | 'PER_COUNT' | 'PER_DAY';
+  }[];
 }
