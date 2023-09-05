@@ -468,7 +468,7 @@ export default interface Shop {
    * @description 외부에서 제공된 업체 혹은 지점에서 차량 반납 방법
    * @nullable false
    * @required true
-   * @default N/A
+   * @default []
    */
   returnGuide: {
     /**
