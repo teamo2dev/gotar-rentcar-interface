@@ -996,6 +996,55 @@ export default interface Vehicle {
      */
     maxAvailableCountPerReservation: number;
     /**
+     * @type Object[]
+     * @description 부가서비스 선택 가능한 옵션
+     * @nullable false
+     * @required true
+     * @default []
+     */
+    selectableOptions: {
+      /**
+       * @type String
+       * @description 부가서비스 선택 가능한 옵션의 표기명
+       * @nullable false
+       * @required true
+       * @example ''
+       * @default N/A
+      */
+      name: string;
+      /**
+       * @type String
+       * @description 부가서비스 선택 가능한 옵션의 고유 값
+       * @nullable false
+       * @required true
+       * @example ''
+       * @default N/A
+      */
+      value: string;
+    }[];
+    /**
+     * @type Number
+     * @description 부가서비스 선택 가능한 옵션의 최대 선택 가능 갯수
+     * <br>
+     * 선택 가능한 옵션의 갯수보다 클 수 없다
+     * @nullable false
+     * @required true
+     * @example 1
+     * @default 0
+     */
+    maximumSelectableOptionsCount: number
+    /**
+     * @type Number
+     * @description 부가서비스 선택 가능한 옵션의 최소 필요 갯수
+     * <br>
+     * 선택 가능한 옵션이 존재하다면 0보다 커야한다
+     * @nullable false
+     * @required true
+     * @example 1
+     * @default 0
+     */
+    minimumSelectableOptionsCount: number
+    /**
      * @type Number
      * @description 부가서비스 지불 방법
      * <br>
