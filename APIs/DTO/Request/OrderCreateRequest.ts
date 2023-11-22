@@ -157,6 +157,39 @@ export default interface OrderCreateRequest {
   driverAge: number;
   /**
    * @type Number
+   * @description 예약된 차량에 탑승할 성인의 수
+   * <br>
+   * - 차량에 탑승하는 총 인원은 adult + child + infant로 계산된다.
+   * @nullable false
+   * @required true
+   * @example 1
+   * @default 1
+   */
+  adult: number;
+  /**
+   * @type Number
+   * @description 예약된 차량에 탑승할 아동의 수
+   * <br>
+   * 차량에 탑승하는 총 인원은 adult + child + infant로 계산된다.
+   * @nullable false
+   * @required true
+   * @example 1
+   * @default 0
+   */
+  child: number;
+  /**
+   * @type Number
+   * @description 예약된 차량에 탑승할 영유아의 수
+   * <br>
+   * 차량에 탑승하는 총 인원은 adult + child + infant로 계산된다.
+   * @nullable false
+   * @required true
+   * @example 1
+   * @default 0
+   */
+  infant: number;
+  /**
+   * @type Number
    * @description 차량검색시 대여하고싶은 좌표 (위도)
    * @nullable false
    * @required true
@@ -224,6 +257,34 @@ export interface OrderCreateRequestAddOn {
    * @default N/A
    */
   id: string;
+  /**
+   * @type Object[]
+   * @description 구매한 부가서비스의 옵션
+   * @nullable false
+   * @required truer
+   * @example []
+   * @default []
+   */
+  selectableOptions: {
+    /**
+     * @type String
+     * @description 구매한 부가서비스 선택 가능한 옵션의 고유 값
+     * @nullable false
+     * @required true
+     * @example ''
+     * @default N/A
+     */
+    value: string;
+    /**
+     * @type Number
+     * @description 구매한 선택 가능한 옵션의 갯수
+     * @nullable false
+     * @required true
+     * @example 1
+     * @default 1
+     */
+    count: number;
+  };
   /**
    * @type Number
    * @description 구매한 부가서비스 갯수
