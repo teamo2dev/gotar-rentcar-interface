@@ -104,6 +104,39 @@ export default interface Order {
    */
   driver: Driver[];
   /**
+   * @type Number
+   * @description 예약된 차량에 탑승하는 성인의 수
+   * <br>
+   * - 차량에 탑승하는 총 인원은 adult + child + infant로 계산된다.
+   * @nullable false
+   * @required true
+   * @example 1
+   * @default 1
+   */
+  adult: number;
+  /**
+   * @type Number
+   * @description 예약된 차량에 탑승하는 아동의 수
+   * <br>
+   * 차량에 탑승하는 총 인원은 adult + child + infant로 계산된다.
+   * @nullable false
+   * @required true
+   * @example 1
+   * @default 0
+   */
+  child: number;
+  /**
+   * @type Number
+   * @description 예약된 차량에 탑승하는 영유아의 수
+   * <br>
+   * 차량에 탑승하는 총 인원은 adult + child + infant로 계산된다.
+   * @nullable false
+   * @required true
+   * @example 1
+   * @default 0
+   */
+  infant: number;
+  /**
    * @type String
    * @description 외부 API에서 전달받은 예약건의 확정 번호
    * <br>
@@ -187,7 +220,7 @@ interface OrderCar {
    * @example 'CBAD'
    * @default ''
    */
-  sipCode: string;
+  sippCode: string;
   /**
    * @type String
    * @description 예약된 차량의 차종 모델 명
