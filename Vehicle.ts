@@ -616,6 +616,15 @@ export interface CreditCard {
    */
   depositMax: Price;
   /**
+   * @type String
+   * @description 보증금 관련 정보성 문구
+   * @nullable true
+   * @required false
+   * @example '보증금에대한 추가적인 설명'
+   * @default '''
+   */
+  depositRemark: string;
+  /**
    * @type Number
    * @description (보증금)최소 반환 기간(일)
    * @nullable false
