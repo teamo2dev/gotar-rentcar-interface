@@ -1,8 +1,8 @@
 /**
- * @interface OrderDetailRequest
- * @description 예약 상세 API Request DTO
+ * @interface OrderDetailRequestParam
+ * @description 예약 상세 API Request Param DTO
  */
-export default interface OrderDetailRequest {
+export interface OrderDetailRequestParam {
   /**
    * @type String
    * @description 외부 API에서 전달받은 예약건의 번호

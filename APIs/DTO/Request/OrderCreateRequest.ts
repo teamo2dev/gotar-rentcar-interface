@@ -1,11 +1,13 @@
+import { AvailableShopCombination } from '../../../Vehicle';
+
 /**
- * @interface OrderCreateRequest
- * @description 예약 생성시 사용되는 Request DTO
+ * @interface OrderCreateRequestBody
+ * @description 예약 생성시 사용되는 Request Body DTO
  * <br>
  * - 2.0기준으로 추가운전자에대한 대응이 안돼있음
  * - API에서 만약 추가운전자에대한 정보를 요구한다면 수정 필요
  */
-export default interface OrderCreateRequest {
+export default interface OrderCreateRequestBody {
   /**
    * @type String
    * @description carmore-common-api에서 식별하는 예약건의 고유 번호
@@ -25,6 +27,30 @@ export default interface OrderCreateRequest {
    * @default N/A
    */
   id: string;
+  /**
+   * @type String
+   * @description 예약할 차량의 대여업체
+   * <br>
+   * 원웨이예약이 아니라면 pickupShop과 returnShop은 항상 같다.
+   * 차량목록에서 받은 AvailableShopCombination에서 가능한 조합만 상세 조회가 가능하다.
+   * @nullable false
+   * @required true
+   * @example KL_12
+   * @default N/A
+   */
+  pickupShopId: string;
+  /**
+   * @type String
+   * @description 예약할 차량의 반납업체
+   * <br>
+   * 원웨이예약이 아니라면 pickupShop과 returnShop은 항상 같다.
+   * 차량목록에서 받은 AvailableShopCombination에서 가능한 조합만 상세 조회가 가능하다.
+   * @nullable false
+   * @required true
+   * @example KL_12
+   * @default N/A
+   */
+  returnShopId: string;
   /**
    * @type String
    * @description Currency (ISO 4217)
@@ -275,16 +301,7 @@ export interface OrderCreateRequestAddOn {
      * @default N/A
      */
     value: string;
-    /**
-     * @type Number
-     * @description 구매한 선택 가능한 옵션의 갯수
-     * @nullable false
-     * @required true
-     * @example 1
-     * @default 1
-     */
-    count: number;
-  };
+  }[];
   /**
    * @type Number
    * @description 구매한 부가서비스 갯수

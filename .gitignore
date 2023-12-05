@@ -4,3 +4,10 @@
 # IDE
 .idea
 .vscode
+
+#Only Dev
+node_modules
+package.json
+package-lock.json
+.dev/
+gotar-rentcar-interface.iml

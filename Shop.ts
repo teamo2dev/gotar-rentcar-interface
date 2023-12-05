@@ -175,7 +175,7 @@ export default interface Shop {
    * @type ReturnShop
    * @description 반납 업체 정보
    * <br>
-   * 구조는 Shop 그 자체와 동일하다. 차량리스트에서는 해당 객체가 아예 없으며, 차량 상세, 예약 상세에서만 존재할 수 있다.
+   * 구조는 Shop의 Interface를 그대로 사용한다. 차량목록에서는 해당 객체가 아예 없으며, 차량 상세, 예약 상세에서만 존재할 수 있다.
    * @nullable false
    * @required true
    * @example ReturnShop
@@ -240,6 +240,8 @@ export interface OperationTime {
   /**
    * @type String
    * @description 운영 시작 시간
+   * <br>
+   * - 운영시작 시간과 종료시간이 모두 00:00이고, closeNextDay가 false는 휴무일이다.
    * @nullable false
    * @required true
    * @example 00:00
@@ -249,6 +251,7 @@ export interface OperationTime {
   /**
    * @type String
    * @description 운영 종료 시간
+   * 운영시작 시간과 종료시간이 모두 00:00이고, closeNextDay가 false는 휴무일이다.
    * @nullable false
    * @required true
    * @example 22:00
@@ -304,6 +307,8 @@ export interface SeasonalOperationTime {
   /**
    * @type String
    * @description 운영 시작 시간
+   * - 운영시작 시간과 종료시간이 모두 00:00이고, closeNextDay가 false는 휴무일이다.
+   * - 예시: startDate: 2022-01-01, endDate: 2022-01-01, open: 00:00, clsoe: 00:00은 2022-01-01, 01-01은 휴무라는 의미.
    * @nullable false
    * @required true
    * @example 00:00
@@ -313,6 +318,8 @@ export interface SeasonalOperationTime {
   /**
    * @type String
    * @description 운영 종료 시간
+   * - 운영시작 시간과 종료시간이 모두 00:00이고, closeNextDay가 false는 휴무일이다.
+   * - 예시: startDate: 2022-01-01, endDate: 2022-01-01, open: 00:00, clsoe: 00:00은 2022-01-01, 01-01은 휴무라는 의미.
    * @nullable false
    * @required true
    * @example 22:00
@@ -634,4 +641,11 @@ export interface ChargedTimePrice {
   amount: number;
 }
 
+/**
+ * @interface ReturnShop
+ * @description 반납업체
+ * <br>
+ * 차량목록 : 사용하지 않음
+ * 차량상세, 예약상세: 필수값
+ */
 export interface ReturnShop extends Omit<Shop, 'returnShop'> {}
