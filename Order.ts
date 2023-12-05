@@ -178,6 +178,18 @@ export default interface Order {
   price: OrderPrice;
   /**
    * @type Policy[]
+   * @description free text로 된 결제에 포함되는 기타 정보에 대한 설명들
+   * <br>
+   * 외부 API에서 제공하는 결제에 포함되는 기타 정보에대한 설명 따위가 Free Text로 돼있는 경우
+   * title, description 규격에 맞춰 제공해야한다.
+   * @nullable false
+   * @required false
+   * @example Policy[]
+   * @default []
+   */
+  reservationDescriptions: Policy[];
+  /**
+   * @type Policy[]
    * @description 예약된 차량의 대여규정 정보
    * @nullable false
    * @required false

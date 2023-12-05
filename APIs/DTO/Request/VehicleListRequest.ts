@@ -1,8 +1,8 @@
 /**
- * @interface VehicleListRequest
- * @description 차량목록 조회시 사용되는 Request DTO
+ * @interface VehicleListRequestQuery
+ * @description 차량목록 조회시 사용되는 Request Query DTO
  */
-export default interface VehicleListRequest {
+export interface VehicleListRequestQuery {
   /**
    * @type String
    * @description Country Code (ISO 3166-1 alpha-2)
@@ -23,7 +23,6 @@ export default interface VehicleListRequest {
    * @default N/A
    */
   returnCountryCode: string;
-
   /**
    * @type String
    * @description Currency (ISO 4217)

@@ -5,8 +5,21 @@
 export default interface Vehicle {
   _id: string;
   _carId: string;
-  _shopId: string;
-  _returnShopId: string;
+  /**
+   * @type AvailableShopCombination[]
+   * @description 해당 차량이 예약 가능한 업체들의 정보
+   * <br>
+   * pickupShop -> RetunShop이 가능한 구조로 나온다
+   * 예: pickupShopId: 1
+   * 예: returnShopId: 7
+   * 1-7이런형태로 가능하다.
+   * 원웨이예약이 아니라면 pickupShop과 returnShop은 항상 같다.
+   * @nullable false
+   * @required true
+   * @example AvailableShopCombination
+   * @default N/A
+   */
+  availableShopCombinations: AvailableShopCombination[];
   /**
    * @type CAR_GROUP
    * @description 차종 등급에대한 Int ENUM
@@ -243,6 +256,18 @@ export default interface Vehicle {
      * @default N/A
      */
     oneWayRental: OneWayRental;
+    /**
+     * @type Policy[]
+     * @description free text로 된 결제 정보에 대한 설명들
+     * <br>
+     * 외부 API에서 제공하는 결제 정보에대한 설명 따위가 Free Text로 돼있는 경우
+     * title, description 규격에 맞춰 제공해야한다.
+     * @nullable false
+     * @required true
+     * @example Policy[]
+     * @default []
+     */
+    reservationDescriptions: Policy[];
   };
   /**
    * @type Boolean
@@ -481,7 +506,7 @@ export interface Insurance {
        */
       excessMax: Price | null;
       /**
-       * @type boolean
+       * @type Boolean
        * @description 자기부담금 여부
        * @nullable false
        * @required true
@@ -499,7 +524,32 @@ export interface Insurance {
        */
       hasDeposit: boolean;
       /**
-       * @type boolean
+       * @type Price
+       * @description 보험의 선 결제 요금
+       * <br>
+       * - 차량 요금(Vehicle.reservation.price)에는 보험의 가격이 항상 합산된다
+       * - 보험의 가격을 알려주기 위한 정보성 Key
+       * @nullable true
+       * @required false
+       * @example Price
+       * @default Price
+       */
+      prepaidPrice: Price | null;
+      /**
+       * @type Price
+       * @description 보험의 현장 결제 요금
+       * 차량 요금(Vehicle.reservation.price)에는 보험의 가격이 항상 합산된다
+       * <br>
+       * - 차량 요금(Vehicle.reservation.price)에는 보험의 가격이 항상 합산된다
+       * - 보험의 가격을 알려주기 위한 정보성 Key
+       * @nullable true
+       * @required false
+       * @example Price
+       * @default Price
+       */
+      payOnArrivalPrice: Price | null;
+      /**
+       * @type Boolean
        * @description 자기부담금 세금 포함 여부
        * @nullable false
        * @required true
@@ -508,7 +558,7 @@ export interface Insurance {
        */
       isExcessIncludeTax: boolean;
       /**
-       * @type boolean
+       * @type Boolean
        * @description 보증금 세금 포함 여부
        * @nullable false
        * @required true
@@ -821,11 +871,14 @@ export interface FreeExtraDriverInfo {
   quantity: number;
 }
 
-
+/**
+ * @interface Policy
+ * @description 차량의 대여 규정
+ */
 export interface Policy {
   /**
    * @type String
-   * @description 대여규정 제목
+   * @description 대여 규정 제목
    * @nullable false
    * @required true
    * @example ''
@@ -834,7 +887,7 @@ export interface Policy {
   title: string;
   /**
    * @type String
-   * @description 대여규정 내용
+   * @description 대여 규정 내용
    * @nullable false
    * @required true
    * @example ''
@@ -993,11 +1046,61 @@ export interface AddOn {
    * <br>
    * - PER_HOUR: 부가서비스 1개마다 예약 시간으로 계산한다. ((reservationHour * count) * price)
    * - PER_COUNT: 부가서비스 1개마다 계산한다. (count * price)
+   * - PER_RESERVATION: 부가서비스 1개마다 계산한다. (count * price), 다만 해당 타입은 1개만 예약이 가능한경우에만 사용이 가능하다
    * - PER_DAY: 부가서비스 1개마다 예약 일로 계산한다 (1일 1시간인경우 2일로 계산한다.) ((day * count) * price)
    * @nullable false
    * @required true
    * @example 'PER_HOUR' | 'PER_COUNT' | 'PER_DAY'
    * @default N/A
    */
-  chargeType: 'PER_HOUR' | 'PER_COUNT' | 'PER_DAY';
+  chargeType: 'PER_HOUR' | 'PER_COUNT' | 'PER_RESERVATION' | 'PER_DAY';
+  /**
+   * @type Boolean
+   * @description 부가서비스 필수 신청 여부
+   * <br>
+   * - true: 해당 부가서비스는 예약건에 필수로 신청해야할 경우
+   * - false: 필수 신청 부가서비스가 아닌경우 (기본값)
+   * @nullable false
+   * @required true
+   * @example false
+   * @default false
+   */
+  isRequired: boolean;
+  /**
+   * @type Boolean
+   * @description 해당 부가서비스를 신청하면 업체의 확정이 필요한 경우
+   * <br>
+   * - true: 업체의 확정이 필요한 부가서비스
+   * - false: 해당값을 확인할 수 없거나, 확정이 필요 없는 경우 (기본값)
+   * @nullable false
+   * @required true
+   * @example false
+   * @default false
+   */
+  isNeedConfirm: boolean;
+}
+
+/**
+ * @interface AvailableShopCombination
+ * @description 차량이 대여-반납이 가능한 업체조합에대한 Id를 담은 Interface
+ */
+export interface AvailableShopCombination {
+  /**
+   * @type String
+   * @description 대여 가능한 업체의 Id
+   * @nullable false
+   * @required true
+   * @example 'KL_12'
+   * @default N/A
+   */
+  pikcupShopId: string;
+  /**
+   * @type String
+   * @description 반납 가능한 업체의 Id
+   * @nullable false
+   * @required true
+   * @example 'KL_13'
+   * @default N/A
+   */
+  returnShopId: string;
 }
