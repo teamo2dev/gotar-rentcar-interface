@@ -1,0 +1,368 @@
+{
+  "path": "/vehicles/BG::UzJCUHJpa0xMTk10TmtUeWhSRzZGNWRJVHdSb0dMSnpjSlhXR0QxRzU0MDVTTTM5Yml5bFNzSHB4YXdTZmFhV0V4OVlsS2QzVWt0YUlGM081OVhXMjhUckxNeDdFY3VPaGRLaWFCR0ZLdFROZE1oMDY1cE5sT1A5emVSTjBNL1A::BG_US0_ToyotaCamry_FCAR?countryCode=US&currency=USD&age=30&returnCountryCode=US&pickupDateTime=2024-10-22T10:00:00&returnDateTime=2024-10-23T10:00:00&pickupShopId=BG_HC5&returnShopId=BG_HC5",
+  "ok": true,
+  "result": {
+    "car": {
+      "_id": "BG_US0_ToyotaCamry_FCAR",
+      "sippCode": "FCAR",
+      "brand": "Toyota",
+      "model": "Camry",
+      "description": "",
+      "images": {
+        "primary": "https://avisassets.abgemea.com/dam/budget/car/toyota/camry/168x136/toyota_camry.jpg",
+        "images": [
+          "https://avisassets.abgemea.com/dam/budget/car/toyota/camry/168x136/toyota_camry.jpg",
+          "https://avisassets.abgemea.com/dam/budget/car/toyota/camry/app/portrait/toyota_camry.png"
+        ]
+      },
+      "seats": 5,
+      "doors": 4,
+      "baggageQuantity": 2,
+      "hasAirCondition": true,
+      "transmissionType": "A/T",
+      "isModelGuaranteed": false
+    },
+    "vehicle": {
+      "_id": "BG::UzJCUHJpa0xMTk10TmtUeWhSRzZGNWRJVHdSb0dMSnpjSlhXR0QxRzU0MDVTTTM5Yml5bFNzSHB4YXdTZmFhV0V4OVlsS2QzVWt0YUlGM081OVhXMjhUckxNeDdFY3VPaGRLaWFCR0ZLdFROZE1oMDY1cE5sT1A5emVSTjBNL1A::BG_US0_ToyotaCamry_FCAR",
+      "_carId": "BG_US0_ToyotaCamry_FCAR",
+      "availableShopCombinations": [
+        {
+          "pickupShopId": "BG_HC5",
+          "returnShopId": "BG_HC5"
+        }
+      ],
+      "carGroupTypeId": 4,
+      "fuelPolicy": "UNKNOWN",
+      "isReleasedInOneYear": false,
+      "maxYear": "",
+      "minYear": "",
+      "requiredDrivingExperience": 0,
+      "agePolicy": {
+        "minAge": 18,
+        "freeAge": 18,
+        "maxAge": 99
+      },
+      "insurance": {
+        "coverage": [
+          {
+            "title": "Third Party Liability (TPL)",
+            "code": "TPL",
+            "subInsurances": [
+              {
+                "title": "Third Party Liability (TPL)",
+                "depositMin": null,
+                "depositMax": null,
+                "excessMin": null,
+                "excessMax": null,
+                "hasExcess": false,
+                "hasDeposit": false,
+                "isExcessIncludeTax": false,
+                "isDepositIncludeTax": false,
+                "remark": "",
+                "coverageScope": "렌탈 계약에 따라 제공되는 제3자 책임 보호를 포함하여 각 사고에 대해 단일 한도인 $1,000,000까지 신체 상해 및 재산 피해에 대한 제3자 책임 보호",
+                "requiredDrivingExperience": 0,
+                "age": null
+              }
+            ]
+          },
+          {
+            "title": "Collision Damage Waiver (CDW)",
+            "code": "CDW",
+            "subInsurances": [
+              {
+                "title": "Collision Damage Waiver (CDW)",
+                "depositMin": null,
+                "depositMax": null,
+                "excessMin": null,
+                "excessMax": null,
+                "hasExcess": false,
+                "hasDeposit": false,
+                "isExcessIncludeTax": false,
+                "isDepositIncludeTax": false,
+                "remark": "",
+                "coverageScope": "Collision Damage Waiver(CDW)는 렌트계약의 이용규정을 위반하지 않았을 경우에 한하여, 사고로 인한 렌트차량의 손상 시에 운전자의 수리 비용 부담을 없애 주는 상품입니다. 대여지역에 따라 LDW라고도 합니다.(렌트차량 손상시 차량 및 지역별 자기부담금이 발생할수 있으므로 차량 인수시 지점에서 정확한 자기부담금액 확인 부탁 드립니다.) ",
+                "requiredDrivingExperience": 0,
+                "age": null
+              }
+            ]
+          }
+        ],
+        "originCoveragePackage": "STANDARD_PLAN",
+        "coveragePackage": "STANDARD_PLAN"
+      },
+      "isDistanceUnlimited": true,
+      "distanceLimit": "",
+      "reservation": {
+        "isImmediateConfirmation": true,
+        "confirmInHours": 0,
+        "price": {
+          "paymentMode": 2,
+          "totalPrice": {
+            "currency": "USD",
+            "amount": 165.15
+          },
+          "payablePrice": {
+            "currency": "USD",
+            "amount": 165.15
+          },
+          "payOnArrivalPrice": {
+            "currency": "USD",
+            "amount": 0
+          },
+          "retailPrice": {
+            "currency": "USD",
+            "amount": 165.15
+          }
+        },
+        "creditCard": [],
+        "cancellationPolicy": {
+          "freeCancellationHours": 24,
+          "freeCancellationHoursAfterReservation": 0,
+          "cancellationCharges": [
+            {
+              "beforeRentalWithinEnd": 0,
+              "beforeRentalWithinStart": 24,
+              "chargeMode": 2,
+              "chargeFixedAmount": null,
+              "chargePercentage": 1,
+              "chargeDays": null
+            }
+          ]
+        },
+        "hasDeposit": false,
+        "oneWayRental": {
+          "paymentOnDeparture": {
+            "currency": "USD",
+            "amount": 0
+          },
+          "paymentOnArrival": {
+            "currency": "USD",
+            "amount": 0
+          }
+        }
+      },
+      "hasGPS": false,
+      "freeExtraDriverInfo": {
+        "isAvailableFreeExtraDriver": false,
+        "quantity": 0
+      },
+      "policies": [
+        {
+          "title": "Age Requirements",
+          "description": "A customer renting a Luxury Car, Minivan, 12-Passenger Van, Full-Size SUV, Premium SUV, Standard Elite SUV or any vehicle in the Specialty/Street Fleet/Cool Car categories must be at least 25 years old.    Exception: A customer with an acceptable corporate discount number can rent the above car classes at 21 years old.  An underage surcharge of $27.00 per day will apply for renters 21-24 years old. For all other car classes, a customer presenting a major charge card or Budget charge card must be at least 21 years old.  An underage surcharge of $27.00 per day will apply for renters 21-24 years old. A customer presenting an acceptable bank debit card must be at least 25 years old.  (See Debit Card Policies for acceptable car groups and full details.)    Exception: A customer presenting an acceptable bank debit card with an acceptable corporate discount number can rent at 21 years old.  An underage surcharge of $27.00 per day will apply for renters 21-24 years old. A customer presenting a government-issued Visa/MasterCard or government travel/purchase orders can rent any car class at age 18 without an underage fee."
+        },
+        {
+          "title": "e-Tolls",
+          "description": "E-TOLL COLLECTION DEVICE AVAILABILITYTOLL PAYMENT TAG PASSYou are responsible for payment of all tolls incurred during the rental period. We offer an optional service called e-toll that allows customers to use electronic toll lanes on highways, bridges, tunnels and other tolled passages. All vehicles are pre-equipped to electronically process tolls. If you do not pay cash for tolls, you automatically opt into our e-toll service to which you agree to pay us or our toll program administrator with whom we will share your credit card/debit information for all tolls incurred during your rental and all related fees, charges and penalties. The e-toll fees may take 4-8 weeks after the rental to be billed to your credit card/debit card on file.E-TOLL SERVICE CONVENIENCE FEESThe convenience fee for e-Toll usage is $3.95 up to $5.95 USD for each day you use the E-Toll device and there is a maximum of $19.75 up to $29.75 USD per rental month, plus toll charges. There are NO service charges if e-Toll is NOT USED during the rental duration.E-TOLL UNLIMITEDAvailable at participating locations in the following states: California, Colorado, Connecticut, Delaware, District of Columbia, Florida, Georgia, Illinois, Indiana, Kentucky, Main, Maryland, Massachusetts, New Hampshire, New Jersey, New York, North Carolina, Oklahoma, Ohio, Pennsylvania, Rhode Island, Texas, Vermont, Washington and West Virginia.If you use the unlimited E-Toll service, all cost of tolls and convenience Fees are included. For this service, you pay a flat fee of $10.99 up to $23.99 USD per each day of the rental period, regardless of whether or not you incur any tolls, or a flat fee of $54.95 up to $119.95 USD per week. E-toll unlimited must be purchased at the beginning of the rental.OPTING OUT OF E-TOLL If you do not choose e-toll unlimited at the time of rental, you may avoid the standard e-toll fees on any given day during the term of the rental if you ensure the transponder shield box is in the `closed` position and you pay cash for all tolls, use your own adequately funded, properly mounted and compatible electronic toll device to pay for all tolls, or pay the toll authority directly and follow the toll authority rules and requirements.For more information on tolling, please visit budget.com/etoll or check at the time of rental."
+        },
+        {
+          "title": "Additional Driver Policy",
+          "description": "All additional drivers must be at least 25 years of age. The fee for each additional driver is $13/day with a maximum charge of $65 per rental. In California, the following may drive the car with the renters permission, are exempt from the additional driver fee, but must meet all other driver requirements: the renter`s employer or fellow employee when on company business and renting under a corporate account; the renter`s spouse or domestic partner; child, sibling or grandparent of the renter; the companion driver of a renter with a disability who has completed the non-licensed renter form; for insurance replacement rentals, company employees or family members who are designated on the insurance policy. All other additional drivers must complete and sign an additional driver form and present valid credit identification. A maximum of two additional drivers may complete a form."
+        },
+        {
+          "title": "Directions",
+          "description": "FASTBREAK SERVICELocal Office Instructions - Counter LocationProceed to Budget rental counter. Show your drivers license and identify yourself as a Fastbreak member. The Budget rental agent will provide you with your preprinted contract and keys.*GENERAL DIRECTIONS*Local Office InstructionsCOUNTER:  Budget is located one block west of Crenshaw Blvd on the north side of Rosecrans Ave. CARS:  On-site. RETURNS:  Same as pick-up.  AFTER-HOURS RETURNS:  Not available."
+        },
+        {
+          "title": "Drivers License",
+          "description": "At time of rental, driver must present a valid drivers license in the drivers name.  All drivers must have a safe driving record.  You may be asked to sign a driving record addendum or be subject to a computerized Department of Motor Vehicles check.  Based upon such search, Budget reserves the right to deny a rental opportunity.  Customers with a drivers license in a non-Roman alphabet may be asked to present an international driving permit (IDP) for translation purposes."
+        },
+        {
+          "title": "Towing",
+          "description": "Towing is not permitted. Vehicles cannot be used to tow or push anything.  A trailer hitch cannot be installed on the vehicles."
+        },
+        {
+          "title": "Fuel Policy",
+          "description": "Fuel Service Charge. Most rentals come with a full tank of fuel, but that is not always the case.Where available, if permitted by law, if you drive less than 75 miles, you acknowledge that we will add a flat fee to the rental, the amount of which will be disclosed on the Rental Contract and at the counter prior to rental. You may avoid this charge at time of return by providing a receipt for fuel purchased at which time the flat fee will be reversed from your total rental charges. If this subparagraph (a) does not apply, there are three refueling options:1) If you do not accept the fuel service option, where available, at the beginning of your rental, and you return the car with less fuel than was in it when you received it, as we determine in our sole discretion, we will charge you a fuel service charge at the applicable rate per-mile or rate per-gallon specified on the Rental Contract or disclosed at the location. The per-mile rate is used if you do not buy fuel during the rental. To calculate this amount, we multiply the number of miles driven, as shown on the car?s odometer (or provided by the vehicle`s telematics device), times the per-mile rate shown on the Rental Contract. The per gallon rate is used if you buy fuel during the rental and provide us with a receipt on our request, but the tank is not as full when you return the car as when you received the car (by using the factory installed gauge, rounded down to the nearest 1/8 tank), times the per-gallon rate shown on the Rental Contract.Although two methods are used for ease of calculation, the per mile and per-gallon rates produce approximately the same result. Some of our cars are equipped with onboard telematics which record the actual amounts of fuel in the gas tank. In the event your car has such a device, you will be charged for the actual amount of gasoline needed to fill the tank based on the reading of this device.2) If you accept the fuel service option at the beginning of your rental, you will be charged as shown on the Rental Contract for that purchase and you will not pay us a fuel service charge. If you choose this option, you will not incur an additional fuel service charge, but you will not receive any credit for fuel left in the tank at the time of return.  If you accept the partial fuel service option at the beginning of your rental, you will be charged as shown on the Rental Contract for that purchase and you will pay a fuel service charge for any fuel not covered by the partial fuel service option. The per-gallon cost of the fuel service option will always be lower than the fuel service charge. The cost of refueling the car yourself at a local service station may be lower than the fuel service charge or the fuel service option. You acknowledge that the fuel service charge is not a retail sale of fuel.3) You may avoid a fuel service charge if you return the car with the fuel tank as full as when you received it and, if requested by us, present a receipt for your fuel purchase. If you put fuel into the car, you must use the correct fuel (having the grade of gasoline stated on the car fuel information decal, or on-road diesel). Do not use ethanol fuel even if the car states that it is a flex-fuel vehicle.   "
+        },
+        {
+          "title": "Travel Into Other States",
+          "description": "Vehicles at this location can be driven throughout the continental U.S. with no restrictions.  Based on availability, one-way rentals may be allowed to some U.S. cities."
+        },
+        {
+          "title": "Credit Card Policies",
+          "description": "Budget accepts most major credit cards as credit identification at the time of rental.  The renter`s name must be on the credit card.Accepted credit card list: Budget Charge Card, Budget International, American Express, Diner`s Club, Diner`s Club International, Discover, China UnionPay, JCB, MasterCard, Optima, and Visa.  Some locations may not accept each of the referenced cards. You may be subject to a credit check or present additional identification.  Acceptable forms of additional identification are:  Valid passport or travel visa, military identification, birth certificate, marriage license, ATM card with customer name printed on face of card, health care identification card with customer?s name printed on face of card or company/college/university identification with a photograph.  In some cases, you may be required to present an alternate credit card. Budget may request an authorization hold against your account for the estimated rental charges of the rental, but reserves the right in its sole discretion to request an extra value to be based on certain factors as we deem appropriate:    Most rentals may require an authorization hold of the estimated rental charges plus $200.00 USD.     If you have prepaid the rental, the hold amount will be $250.00 USD. While this hold is in place, the funds will not be available for your use.  When the rental is over, we will process the reversal, but the bank may take time to post it back to the account. Note: Prepaid credit cards are not acceptable methods of credit identification to pick up a car at any location.  One of the above mentioned cards must be presented.  Prepaid credit cards are accepted at time of return only, if we can obtain full authorization from the card bank for the total charges due."
+        },
+        {
+          "title": "Public Liability and Property Damage",
+          "description": "Information not available at this time, please check at time of rental.Public liability insurance is with in accordance of the insurance laws of the country.Customer may inquire for additional information of the benefits, conditions and acceptance at the time of rental.Note: Some credit cards provide insurance coverage, with certain limitations, as a benefit of using the card to rent vehicles. The customer is advised to contact the card issuer before the rental. Any waiver must be discussed directly with the location upon arrival.Information not available at this time, please check at time of rental."
+        },
+        {
+          "title": "Additional Fees and Credit Holds",
+          "description": "Additional Fees    Except for a surcharge for renters under 25 years of age at some locations, your total rental rate is calculated based on the information provided at time of reservation.  The rate is based on the exact parameters (location, dates, etc.) of your particular rental, so changing any of your confirmed reservation parameters could result in different rates, taxes and fees.     Quoted taxes and fees are subject to change which will affect your final total due at rental return.     Vehicles are rented on a daily (24-hour) basis with a 29-minute grace period for returns. After 30 minutes late, a 3/4-day late charge + $.01 + taxes apply.  After 90 minutes late, full-day late charges + taxes apply.     If you reserve any type of vehicle that requires a credit card hold and you no longer require the rental, you must cancel the reservation before the scheduled pick-up time or you will be charged a $75.00 fee ($50.00 for a budget.com paid rental).     The U.S. Government imposes a $5.00 per day Admin Rate Supplement (GARS) for U.S. Government rentals.     If you selected an Optional Product (coverages, GPS, child safety seat, Roadside SafetyNet, XM Radio, etc.) with your rental:            Prohibited use of your rental vehicle will void the Roadside SafetyNet Option.        The Fuel Service Option price is not included in your reservation total.  The prevailing market rate for fuel plus associated tax and fees will be charged when you return your car.        You are responsible for replacement costs if the Optional Product or its components are lost, stolen or damaged.  Products are charged on a daily (24-hour) basis.  There is no grace period for returns of Optional Products, so full-day late charges will apply.             If you used a coupon for your reservation:            Most savings are reflected in your quoted rate.  If your rental meets all coupon terms, any additional rate adjustment will be made when you pick up your car.        For an upgrade, your reserved car will be upgraded at time of rental subject to car availability.  This upgrade may not be used in conjunction with any other coupon, promotion or deal.        The value of your coupon has been deducted from the base rate (time and mileage) charges and is reflected in the approximate total.  Paper coupons, however, may not be applied online and should be presented at the counter.  Please refer to all coupons for the full terms.  Restrictions may apply.             Once you have picked up the car, if you wish to extend the rental return date past your originally scheduled time, you must call 800-824-6287.  A service fee of $10.00 will apply and your original per-day rental rate may change.  If you don`t call to extend your rental within 7 hours of your originally scheduled return time, a late fee will apply.    A Frequent Traveler Program Surcharge or Excise Tax of up to $1.50 per day may be applied and will be assessedin connection with miles, points or credits earned pursuant to this reservation.Credit HoldsFor authorization hold limits, please see the following topics:    Credit Card Policies    Debit Card Policies"
+        },
+        {
+          "title": "Required Credentials",
+          "description": "At time of pickup, all drivers must present a valid driver`s license in their name (see `Driver`s License Requirements` section for complete details).- If the driver`s license is not issued from the U.S., then the renter must also present a valid passport or Canadian enhanced license and a travel itinerary showing proof of return to the resident country.- If the country of residence on the renter`s credentials does not match the country indicated on the reservation, the rental rate will change.- You may be asked to sign a driving record addendum or be subject to a computerized Department of Motor Vehicles check.  All drivers must have a safe driving record or Budget reserves the right to deny the rental. At time of pickup, renter must present one of the following credentials:- A valid credit card in the renter`s name.  See the `Credit Card Policies` section for complete details.- A valid debit card in the renter`s name (at participating locations).  If using a debit card, additional documentation may be required.  See the `Debit Card Policies` section for complete details.Note:  A prepaid, loadable charge card or gift card is not an acceptable credential.When using some offer codes, you must provide association, corporate, or government credentials to prove eligibility for the special rate/benefit.Keep your reservation confirmation number because it is necessary for modification, cancellation or refund requests.Once your scheduled pick-up time passes, reservation changes cannot be made online."
+        },
+        {
+          "title": "Travel Into Other Countries",
+          "description": "Canada: Vehicles may be  driven into Canada with no restrictions. The rental  counter must be notified at  the time of the rental that you plan to  drive into Canada so the location can  provide a copy of the ?Canadian Non-Resident Insurance Card? or  you may download card click here.  (Provided at no cost). Based on availability, one-way rentals may be allowed to  some Canada cities.  Mexico:  Corporate account customers are allowed to drive the vehicle into Mexico with certain restrictions and the purchase of additional insurance.  Check with the location for details.  One-way rentals are not allowed to Mexico."
+        },
+        {
+          "title": "Optional Coverages",
+          "description": "Acceptance of Loss Damage Waiver relieves the renter and authorized additional drivers of financial responsibility if the Budget car is damaged or stolen while under rental contract.  Using the vehicle in violation of any of the use restrictions listed on the rental agreement could void LDW and leave the renter fully responsible for any damage to the vehicle.LDW is not available in all states and certain restrictions may apply in some states.  At the time of rental, the customer must initial whether he/she accepts or declines the LDW and/or other optional services.  LDW and other optional services must be signed for at the rental counter.If LDW is not accepted, the customer may be responsible for up to the full fair market value of the car if it is damaged, vandalized or stolen during the rental.  The customer may also be responsible for reimbursing Budget for the revenue lost by not being able to use the car while it is being repaired or not recovered due to theft (referred to as Loss Of Use)."
+        },
+        {
+          "title": "Debit Card Policies",
+          "description": "Participating locations will accept a Debit card,  however, it must have an accepted bank processing logo (Visa,  MasterCard, AMEX, Discover, etc) at the time of rental if you are at  least 25 years of agewith the following requirements:    The name of the renter must be on the debit card.     A debit card is accepted as credit identification for Economy cars, Compact cars, Intermediate cars, Standard cars, Full-Size cars, Intermediate SUV?s, or Standard SUV?s. The rental of any other vehicle category will require a major credit card.     At airport locations, you will be required to show proof of a return airline flight that corresponds with your rental.     You will be subject to a credit check to determine and ensure credit worthiness before releasing the car to you.  If your credit file is frozen with Equifax, you will be required to lift the restriction prior to your rental.  Lifting the restriction does not guarantee that you will be able to rent a vehicle as you will still be subject to a credit check.  Budget will generally request an authorization hold against your account for the estimated rental charges of the rental, but reserves the right in its sole discretion to request an extra value to be based on certain factors as we deem appropriate:    Most rentals may require an authorization hold of the estimated rental charges plus $200 USD.     Rentals of 4 days or more may require an authorization hold of the estimated rental charges plus $300 USD.     If you have prepaid the rental with a debit card, the hold is $250.00 USD. THESE FUNDS WILL NOT BE AVAILABLE FOR YOUR USE.  When the rental is over, we will process the reversal, but the bank may take time to post it back to the account.  If you fail to return the vehicle as agreed, Budget will obtain additional authorizations from your account to cover the rental charges.  Budget is not responsible for any returned checks or overdraft fees based on this policy.Positive identification in addition to your driver`s license may be required. Note: Prepaid Debit/Gift cards are not acceptable methods of credit identification to pick up a car at any location.  Prepaid Debit/Gift cards are accepted at time of return only, if we can obtain full authorization from the card bank for the total charges due."
+        }
+      ]
+    },
+    "vendor": {
+      "_id": "BG_1",
+      "name": "BUDGET",
+      "code": "BG"
+    },
+    "shop": {
+      "_id": "BG_HC5",
+      "_vendorId": "BG_1",
+      "name": "Budget Hawthorne Ca",
+      "contacts": [
+        "310-970-1792"
+      ],
+      "operationTimes": [
+        {
+          "day": "SUN",
+          "open": "08:00",
+          "close": "12:00",
+          "closeNextDay": false
+        },
+        {
+          "day": "MON",
+          "open": "08:00",
+          "close": "17:00",
+          "closeNextDay": false
+        },
+        {
+          "day": "TUE",
+          "open": "08:00",
+          "close": "17:00",
+          "closeNextDay": false
+        },
+        {
+          "day": "WED",
+          "open": "08:00",
+          "close": "17:00",
+          "closeNextDay": false
+        },
+        {
+          "day": "THU",
+          "open": "08:00",
+          "close": "17:00",
+          "closeNextDay": false
+        },
+        {
+          "day": "FRI",
+          "open": "08:00",
+          "close": "17:00",
+          "closeNextDay": false
+        },
+        {
+          "day": "SAT",
+          "open": "08:00",
+          "close": "13:00",
+          "closeNextDay": false
+        }
+      ],
+      "seasonalOperationTimes": [],
+      "operationBreakTimes": [],
+      "seasonalOperationBreakTimes": [],
+      "location": {
+        "name": "",
+        "address": "",
+        "streetAddress": "3145 W Rosecrans Ave  ",
+        "positionType": -1,
+        "terminalCode": "",
+        "wayOfArrival": "",
+        "isAirportShop": false,
+        "latitude": "33.902222222222221",
+        "longitude": "-118.32833333333333"
+      },
+      "pickupGuide": [],
+      "returnGuide": [],
+      "shopGuide": "",
+      "licensePolicies": [],
+      "identificationPolicies": [],
+      "holidayNotice": "",
+      "specialNotice": "",
+      "chargedTimes": [],
+      "chargedTimePrice": null,
+      "returnShop": {
+        "_id": "BG_HC5",
+        "_vendorId": "BG_1",
+        "name": "Budget Hawthorne Ca",
+        "contacts": [
+          "310-970-1792"
+        ],
+        "operationTimes": [
+          {
+            "day": "SUN",
+            "open": "08:00",
+            "close": "12:00",
+            "closeNextDay": false
+          },
+          {
+            "day": "MON",
+            "open": "08:00",
+            "close": "17:00",
+            "closeNextDay": false
+          },
+          {
+            "day": "TUE",
+            "open": "08:00",
+            "close": "17:00",
+            "closeNextDay": false
+          },
+          {
+            "day": "WED",
+            "open": "08:00",
+            "close": "17:00",
+            "closeNextDay": false
+          },
+          {
+            "day": "THU",
+            "open": "08:00",
+            "close": "17:00",
+            "closeNextDay": false
+          },
+          {
+            "day": "FRI",
+            "open": "08:00",
+            "close": "17:00",
+            "closeNextDay": false
+          },
+          {
+            "day": "SAT",
+            "open": "08:00",
+            "close": "13:00",
+            "closeNextDay": false
+          }
+        ],
+        "seasonalOperationTimes": [],
+        "operationBreakTimes": [],
+        "seasonalOperationBreakTimes": [],
+        "location": {
+          "name": "",
+          "address": "",
+          "streetAddress": "3145 W Rosecrans Ave  ",
+          "positionType": -1,
+          "terminalCode": "",
+          "wayOfArrival": "",
+          "isAirportShop": false,
+          "latitude": "33.902222222222221",
+          "longitude": "-118.32833333333333"
+        },
+        "pickupGuide": [],
+        "returnGuide": [],
+        "shopGuide": "",
+        "licensePolicies": [],
+        "identificationPolicies": [],
+        "holidayNotice": "",
+        "specialNotice": "",
+        "chargedTimes": [],
+        "chargedTimePrice": null
+      }
+    }
+  }
+}
