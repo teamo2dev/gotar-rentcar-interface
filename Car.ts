@@ -17,6 +17,8 @@ export default interface Car {
   /**
    * @type String
    * @description 렌터카의 주요 특징을 식별하는 네글자의 코드
+   * <br>
+   * - Reference: https://car-hire-centre.co.uk/sipp-codes.html
    * @nullable false
    * @required false
    * @example 'CBAD'
