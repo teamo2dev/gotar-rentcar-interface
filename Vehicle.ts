@@ -3,7 +3,29 @@
  * @description Vehicle 정보
  */
 export default interface Vehicle {
+  /**
+   * @type String
+   * @description 차량에대한 고유 값
+   * <br>
+   * - Available: BG_와 같이 API Identifier + 차량에대한 고유함을 보장할 수 있는 조합 값
+   * - 고유함을 보장하는 조합 값에 대해서는 모든 값이 허용된다.
+   * @nullable false
+   * @required true
+   * @example 'BG_ASASBDSBASDBAS_BDSBASDBASB_SABADSBSB'
+   * @default N/A
+   */
   _id: string;
+  /**
+   * @type String
+   * @description 차량에대한 고유 값
+   * <br>
+   * - Available: BG_와 같이 API Identifier + 차량에대한 고유함을 보장할 수 있는 조합 값
+   * - 고유함을 보장하는 조합 값에 대해서는 모든 값이 허용된다.
+   * @nullable false
+   * @required true
+   * @example 'BG_ASASBDSBASDBAS_BDSBASDBASB_SABADSBSB'
+   * @default N/A
+   */
   _carId: string;
   /**
    * @type AvailableShopCombination[]

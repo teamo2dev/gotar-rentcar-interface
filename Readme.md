@@ -39,12 +39,13 @@
 ### Interface
   - [`Car`](Car.ts)
     - 차종에 대한 정의 (실제 판매 되는 렌터카에 대한 `차종` EX: `K5`등)
+    - 운영에 사용되는 캐싱된 차종
 
   - [`Vehicle`](Vehicle.ts)
     - 차량에 대한 정의 (실제 판매 되는 렌터카 상품)
 
   - [`Affiliate`](Affiliate.ts)
-    - 업체에 대한 정의
+    - 업체에 대한 정의 (운영에 사용되는 캐싱된 업체)
 
   - [`Vendor`](Vendor.ts)
     - `Budget`, `Avis`와 같은 업체 브랜드
@@ -55,7 +56,7 @@
   - [`Order`](Order.ts)
     - `Vehicle`에대한 실제 주문 내용
 
-  - `Reservation`
+  - [`Reservation`](Reservation.ts)
     - `Carmore` 운영에 사용 되는 예약에 대한 `Interface`
 
 ### APIs
@@ -92,3 +93,38 @@
         - [Request](./APIs/DTO/Request/OrderCancelRequest.ts)
         - [Response](./APIs/DTO/Response/OrderCancelResponse.ts)
         - endPoint : `PATCH` `/orders/:id/cancelation`
+  - `Affiliates`
+    - `캐싱 업체 목록 조회`, `캐싱 업체 단일 조회`를 제공 해야 한다.
+      - `업체 목록 조회`
+        - [Request](./APIs/DTO/Request/GetAffiliatesRequest.ts)
+        - [Response](./APIs/DTO/Response/GetAffiliatesResponse.ts)
+        - endPoint : `GET` `/affiliates/`
+      - `업체 단일 조회`
+        - [Request](./APIs/DTO/Request/GetAffiliateRequest.ts)
+        - [Response](./APIs/DTO/Response/GetAffiliateResponse.ts)
+        - endPoint : `GET` `/affiliates/:id`
+  - `Cars`
+    - `캐싱 차종 목록 조회`, `캐싱 차종 단일 조회`를 제공 해야 한다.
+      - `차종 목록 조회`
+        - [Request](./APIs/DTO/Request/GetCarsRequest.ts)
+        - [Response](./APIs/DTO/Response/GetCarsResponse.ts)
+        - endPoint : `GET` `/cars/`
+      - `차종 단일 조회`
+        - [Request](./APIs/DTO/Request/GetCarRequest.ts)
+        - [Response](./APIs/DTO/Response/GetCarResponse.ts)
+        - endPoint : `GET` `/cars/:id`  
+  - `Reservations`
+    - `예약 목록에대한 정보를 제공 해야한다`
+      - `예약 목록 조회`
+        - [Request](./APIs/DTO/Request/GetReservationsRequest.ts)
+        - [Response](./APIs/DTO/Response/GetReservationsResponse.ts)
+        - endPoint : `GET` `/reservations/` 
+
+## Flow
+
+```mermaid
+graph LR
+    VendorAPI[원천API] <-->|VendorAPI Request And Response| WrappingAPI[랩핑API]
+    WrappingAPI <-->|GOTAR Request And Response| CarmoreAPI[카모아API]
+    CarmoreAPI -->|Carmore API Request And Response| Carmore[카모아]
+```
