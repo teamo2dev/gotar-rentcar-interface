@@ -6,6 +6,7 @@ import {
   OperationTime,
   SeasonalOperationBreakTime,
   SeasonalOperationTime,
+  Location,
 } from './Shop';
 
 /**
@@ -23,7 +24,7 @@ export default interface Affiliate {
    * @example BG_ABC_123
    * @default N/A
    */
-  affiliateId: string;
+  id: string;
   /**
    * @type String
    * @description Unique identifier of the vendor
