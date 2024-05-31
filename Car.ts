@@ -5,7 +5,7 @@
 export default interface Car {
   /**
    * @type String
-   * @description Unique identifier of the shop
+   * @description Unique identifier of the Car
    * <br>
    * - Available: BG_와 같이 API Identifier + underscore로 시작하는 어떠한 값
    * @nullable false
