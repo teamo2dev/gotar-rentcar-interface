@@ -9,17 +9,18 @@ export default interface Vehicle {
    * <br>
    * - Available: BG_와 같이 API Identifier + 차량에대한 고유함을 보장할 수 있는 조합 값
    * - 고유함을 보장하는 조합 값에 대해서는 모든 값이 허용된다.
+   * - prefix로 API Identifier가 구분자와 함께 들어가야한다 (BG::BG_~)
    * @nullable false
    * @required true
-   * @example 'BG_ASASBDSBASDBAS_BDSBASDBASB_SABADSBSB'
+   * @example 'BG::BG_ASASBDSBASDBAS_BDSBASDBASB_SABADSBSB'
    * @default N/A
    */
   _id: string;
   /**
    * @type String
-   * @description 차량에대한 고유 값
+   * @description 차종에대한 고유 값
    * <br>
-   * - Available: BG_와 같이 API Identifier + 차량에대한 고유함을 보장할 수 있는 조합 값
+   * - Available: BG_와 같이 API Identifier + 차종에대한 고유함을 보장할 수 있는 조합 값
    * - 고유함을 보장하는 조합 값에 대해서는 모든 값이 허용된다.
    * @nullable false
    * @required true
@@ -1115,7 +1116,7 @@ export interface AvailableShopCombination {
    * @example 'KL_12'
    * @default N/A
    */
-  pikcupShopId: string;
+  pickupShopId: string;
   /**
    * @type String
    * @description 반납 가능한 업체의 Id
