@@ -216,7 +216,7 @@ export default interface OrderCreateRequestBody {
   infant: number;
   /**
    * @type Number
-   * @description 차량검색시 대여하고싶은 좌표 (위도)
+   * @description 차량 검색 시 대여하고싶은 좌표 (위도)
    * @nullable false
    * @required true
    * @example 127.001
@@ -225,7 +225,7 @@ export default interface OrderCreateRequestBody {
   pickupLatitude: number;
   /**
    * @type Number
-   * @description 차량검색시 대여하고싶은 좌표 (경도)
+   * @description 차량 검색 시 대여하고싶은 좌표 (경도)
    * @nullable false
    * @required true
    * @example 1.234
@@ -234,7 +234,7 @@ export default interface OrderCreateRequestBody {
   pickupLongitude: number;
   /**
    * @type Number
-   * @description 차량검색시 반납하고싶은 좌표 (위도)
+   * @description 차량 검색 시 반납하고싶은 좌표 (위도)
    * <br>
    * 원웨이 차량조회시 해당값은 항상 다르다
    * 만약 원웨이가 아닌경우 해당값은 항상 같다
@@ -246,7 +246,7 @@ export default interface OrderCreateRequestBody {
   returnLatitude: number;
   /**
    * @type Number
-   * @description 차량검색시 반납하고싶은 좌표 (경도)
+   * @description 차량 검색 시 반납하고싶은 좌표 (경도)
    * <br>
    * 원웨이 차량조회시 해당값은 항상 다르다
    * 만약 원웨이가 아닌경우 해당값은 항상 같다
