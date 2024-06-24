@@ -83,7 +83,7 @@ export interface VehicleListRequestQuery {
   returnLocationCode?: string;
   /**
    * @type Number
-   * @description 차량검색시 대여하고싶은 좌표 (위도)
+   * @description 차량 검색 시 대여하고싶은 좌표 (위도)
    * @nullable false
    * @required true
    * @example 127.001
@@ -92,7 +92,7 @@ export interface VehicleListRequestQuery {
   pickupLatitude: number;
   /**
    * @type Number
-   * @description 차량검색시 대여하고싶은 좌표 (경도)
+   * @description 차량 검색 시 대여하고싶은 좌표 (경도)
    * @nullable false
    * @required true
    * @example 1.234
@@ -101,7 +101,7 @@ export interface VehicleListRequestQuery {
   pickupLongitude: number;
   /**
    * @type Number
-   * @description 차량검색시 반납하고싶은 좌표 (위도)
+   * @description 차량 검색 시 반납하고싶은 좌표 (위도)
    * <br>
    * 원웨이 차량조회시 해당값은 항상 다르다
    * 만약 원웨이가 아닌경우 해당값은 항상 같다
@@ -113,7 +113,7 @@ export interface VehicleListRequestQuery {
   returnLatitude: number;
   /**
    * @type Number
-   * @description 차량검색시 반납하고싶은 좌표 (경도)
+   * @description 차량 검색 시 반납하고싶은 좌표 (경도)
    * <br>
    * 원웨이 차량조회시 해당값은 항상 다르다
    * 만약 원웨이가 아닌경우 해당값은 항상 같다
@@ -123,4 +123,16 @@ export interface VehicleListRequestQuery {
    * @default N/A
    */
   returnLongitude: number;
+  /**
+   * @type Number
+   * @description 차량 검색 시 조회 할 반경 (km)
+   * <br>
+   * 차량 검색시 반경 N km 까지 조회하기 위한 값
+   * 기본값 10km
+   * @nullable true
+   * @required false
+   * @example 10
+   * @default 10
+   */
+  searchRadius: number;
 }
