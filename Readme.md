@@ -133,12 +133,19 @@ graph LR
 
 - 카모아API Server에서 가예약이 완료 되면 대상 글로벌API로 예약 요청을 전송한다.
     - 이때 받은 예약에대한 요청 값은 기존 동기방식 (Order CreateOrder)와 동일하다.
+  
 - 글로벌API는 예약요청에대한 값이 유효하다면 예약 요청 성공응답을 보내야 한다.
     - 이때 보내는 응답값은 기존 CreateOrder 응답값이 아닌 위 비동기 예약 요청 성공 응답값을 보내야한다.
-    - 예약에대한 프로세스가 추적이 가능한 특정 Key를 반환해야한다. (CommonResponse의 trackingId와 같은 값.)
+      - 성공,실패 상관없이 예약에대한 프로세스가 추적이 가능한 특정 Key를 반환해야한다. (CommonResponse의 trackingId와 같은 값.)
+      - 성공 시 (200 OK), 실패 시 (실패 오류 + 오류 메시지)
+      - 예: 성공 시 200 OK + trackingId, 실패 시 500 Internal Server Error + Error Message + trackingId
+  
 - 글로벌API는 실패,성공과 상관 없이 카모아API Server의 예약승인 API로 아래 예시와 같은 요청 값을 보내야한다.
     - 요청값은 기존 CreateOrderRequest에 `withOutPayment` 신규 키가 추가된 형태이다.
-
+    - 예약 승인 API
+      - 실제 서버 : `[POST]` https://common-api.carmore.kr/global/reservations/approval
+      - 개발 서버 : `[POST]` https://dev-common-api.carmore.kr/global/reservations/approval
+    - 하기 예시는 위 요청으로 보내야할 요청 `Body`에대한 예시 값 입니다.
 ```
 요청값 예시
   예약 성공시
