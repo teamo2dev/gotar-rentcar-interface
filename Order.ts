@@ -443,6 +443,20 @@ interface OrderCar {
   isDistanceUnlimited: boolean;
   /**
    * @type String
+   * @description 운행 거리 제한 기준
+   * <br>
+   * ∙ isDistanceUnlimited 값이 false 인 경우에만 해당 값이 존재
+   * - DAY 1일당 {distanceLimit} 이하
+   * - RENTAL 렌트 기간 동안 {distanceLimit} 이하
+   * - HOUR 1시간 동안 {distanceLimit} 이하
+   * @nullable true
+   * @required false
+   * @example 'RENTAL'
+   * @default 'RENTAL'
+   */
+  distanceLimitType: string;
+  /**
+   * @type String
    * @description 가능한 운행 거리
    * <br>
    * ∙ isDistanceUnlimited 값이 false 인 경우에만 해당 값이 존재
