@@ -1,3 +1,5 @@
+import {CancellationPolicy} from "./Vehicle";
+
 /**
  * @interface Shop
  * @description shop 정보
@@ -171,6 +173,17 @@ export default interface Shop {
    * @default null
    */
   chargedTimePrice: ChargedTimePrice;
+  /**
+   * @type CancellationPolicy
+   * @description 업체의 취소수수료 규정 정보
+   * <br>
+   * 업체 단위로 발생할 수 있는 취소수수료의 정책 정보가 존재할 경우 반환
+   * @nullable true
+   * @required false
+   * @example CancellationPolicy
+   * @default N/A
+   */
+  cancellationPolicy: CancellationPolicy;
   /**
    * @type ReturnShop
    * @description 반납 업체 정보
