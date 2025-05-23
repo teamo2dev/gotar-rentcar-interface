@@ -8,6 +8,7 @@ import {
   SeasonalOperationTime,
   Location,
 } from './Shop';
+import {CancellationPolicy} from "./Vehicle";
 
 /**
  * @interface Affiliate
@@ -150,4 +151,15 @@ export default interface Affiliate {
    * @default []
    */
   returnGuide: Guide[];
+  /**
+   * @type CancellationPolicy[]
+   * @description 업체의 취소수수료 규정 정보
+   * <br>
+   * 업체 단위로 발생할 수 있는 취소수수료의 정책 정보가 존재할 경우 반환
+   * @nullable true
+   * @required false
+   * @example CancellationPolicy
+   * @default N/A
+   */
+  cancellationPolicies: CancellationPolicy[];
 }
