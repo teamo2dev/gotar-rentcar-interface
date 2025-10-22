@@ -644,7 +644,7 @@ export interface ChargedTimePrice {
    */
   currency: string;
   /**
-   * @type String
+   * @type Number
    * @description 부과되는 추가 요금
    * @nullable false
    * @required true
