@@ -95,7 +95,7 @@ export interface ReservationVehicle {
    */
   maximumAge: number;
   /**
-   * @type String
+   * @type Number
    * @description 차량을 운전하기 위한 운전경력 최소 년도 수
    * @nullable true
    * @required true
