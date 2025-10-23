@@ -27,10 +27,10 @@ export interface CachedCar {
   sippCode: string,
   /**
    * @type String
-   * @description 차종 브랜드 명
+   * @description 차종 모델 명
    * @nullable false
    * @required true
-   * @example 'KIA'
+   * @example 'K3'
    * @default N/A
    */
   model: string,
@@ -97,4 +97,4 @@ export interface CachedCar {
    * @default -1
    */
   baggageQuantity: number;
-};
+}
