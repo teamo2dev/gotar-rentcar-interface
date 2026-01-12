@@ -97,4 +97,38 @@ export interface CachedCar {
    * @default -1
    */
   baggageQuantity: number;
+  /**
+   * @type Boolean
+   * @description 예약된 차량의 에어컨 설치 여부
+   * <br>
+   * 외부에서 제공하는 값이 없다면 null 혹은 false
+   * @nullable true
+   * @required false
+   * @example true
+   * @default false
+   */
+  hasAirCondition: boolean;
+  /**
+   * @type String
+   * @description 예약된 차량의 차종의 변속기
+   * - A/T : 오토
+   * - M/T : 메뉴얼 (수동)
+   * @nullable false
+   * @required true
+   * @example 'A/T'
+   * @default N/A
+   */
+  transmissionType: string;
+  /**
+   * @type Boolean
+   * @description 예약된 차량의 차종 보장 가능 여부
+   * <br>
+   * - true : 항상 이 차종이 보장된다
+   * - false : 다른 차종이 배정될 수 있다.
+   * @nullable false
+   * @required true
+   * @example true
+   * @default N/A
+   */
+  isModelGuaranteed: boolean;
 }
