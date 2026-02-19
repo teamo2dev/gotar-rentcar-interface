@@ -138,6 +138,24 @@ export default interface Shop {
    */
   returnGuide: Guide[];
   /**
+   * @type String[]
+   * @description 선택 가능한 픽업 방식 리스트 (존재하면 예약 시 요청 파라미터로 전달해야 함)
+   * @nullable true
+   * @required false
+   * @example []
+   * @default []
+   */
+  pickupWays: string[];
+  /**
+   * @type String[]
+   * @description 선택 가능한 반납 방식 리스트 (존재하면 예약 시 요청 파라미터로 전달해야 함)
+   * @nullable true
+   * @required false
+   * @example []
+   * @default []
+   */
+  returnWays: string[];
+  /**
    * @type String
    * @description 외부에서 제공된 업체 혹은 지점 공휴일 관련 공지사항
    * @nullable false

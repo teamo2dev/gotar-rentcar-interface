@@ -474,6 +474,7 @@ interface OrderCar {
  * <br>
  * - Shop에서 'holidayNotice' | 'specialNotice' | 'chargedTimes' | 'chargedTimePrice' 키를 제외하고
  * - 예약 당시의 취소수수료 정보에대한 키(CancellationPolicy)를 추가한 예약 당시의 업체 정보
+ * - 예약 당시 선택한 픽업/반납 방식이 존재하는 경우 해당 정보가 추가된다
  */
 interface OrderShop extends Omit<Shop, 'holidayNotice' | 'specialNotice' | 'chargedTimes' | 'chargedTimePrice'> {
   /**
@@ -487,6 +488,24 @@ interface OrderShop extends Omit<Shop, 'holidayNotice' | 'specialNotice' | 'char
    * @default N/A
    */
   cancellationPolicy: CancellationPolicy[];
+  /**
+   * @type String
+   * @description 선택한 픽업 방식 (예약 시에 전달한 정보)
+   * @nullable true
+   * @required false
+   * @example ""
+   * @default ""
+   */
+  pickupWay: string;
+  /**
+   * @type String
+   * @description 선택한 반납 방식 (예약 시에 전달한 정보)
+   * @nullable true
+   * @required false
+   * @example ""
+   * @default ""
+   */
+  returnWay: string;
 }
 
 /**

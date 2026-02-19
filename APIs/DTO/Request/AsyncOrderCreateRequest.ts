@@ -53,6 +53,24 @@ export default interface OrderCreateRequestBody {
   returnShopId: string;
   /**
    * @type String
+   * @description 선택한 픽업 방식 (예약 시에 전달한 정보)
+   * @nullable true
+   * @required false
+   * @example ""
+   * @default ""
+   */
+  pickupWay: string;
+  /**
+   * @type String
+   * @description 선택한 반납 방식 (예약 시에 전달한 정보)
+   * @nullable true
+   * @required false
+   * @example ""
+   * @default ""
+   */
+  returnWay: string;
+  /**
+   * @type String
    * @description Currency (ISO 4217)
    * @nullable false
    * @required true
